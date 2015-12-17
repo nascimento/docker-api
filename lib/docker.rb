@@ -14,6 +14,9 @@ require 'open-uri'
 require 'excon/middlewares/hijack'
 Excon.defaults[:middlewares].unshift Excon::Middleware::Hijack
 
+Excon.defaults[:write_timeout] = 1000
+Excon.defaults[:read_timeout] = 1000
+
 # The top-level module for this gem. It's purpose is to hold global
 # configuration variables that are used as defaults in other classes.
 module Docker
